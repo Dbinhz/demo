@@ -4,9 +4,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="./assets/img/favicon.png">
     <title>
-        B ❤️ M
+        B ❤️ ?
     </title>
+    <style>/*Eliminates padding, centers the thumbnail */
 
+        body, html {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        }
+        
+        /* Styles the thumbnail */
+        
+        a.lightbox img {
+        height: 150px;
+        border: 3px solid white;
+        box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+        margin: 94px 20px 20px 20px;
+        }
+        
+        /* Styles the lightbox, removes it from sight and adds the fade-in transition */
+        
+        .lightbox-target {
+        position: fixed;
+        top: -100%;
+        width: 100%;
+        background: rgba(0,0,0,.7);
+        width: 100%;
+        opacity: 0;
+        -webkit-transition: opacity .5s ease-in-out;
+        -moz-transition: opacity .5s ease-in-out;
+        -o-transition: opacity .5s ease-in-out;
+        transition: opacity .5s ease-in-out;
+        overflow: hidden;
+         
+        }
+        
+        /* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+        
+        .lightbox-target img {
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left:0;
+        right:0;
+        bottom: 0;
+        max-height: 0%;
+        max-width: 0%;
+        border: 3px solid white;
+        box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+        box-sizing: border-box;
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+          
+        }
+        
+        /* Styles the close link, adds the slide down transition */
+        
+        a.lightbox-close {
+        display: block;
+        width:50px;
+        height:50px;
+        box-sizing: border-box;
+        background: white;
+        color: black;
+        text-decoration: none;
+        position: absolute;
+        top: -80px;
+        right: 0;
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        }
+        
+        /* Provides part of the "X" to eliminate an image from the close link */
+        
+        a.lightbox-close:before {
+        content: "";
+        display: block;
+        height: 30px;
+        width: 1px;
+        background: black;
+        position: absolute;
+        left: 26px;
+        top:10px;
+        -webkit-transform:rotate(45deg);
+        -moz-transform:rotate(45deg);
+        -o-transform:rotate(45deg);
+        transform:rotate(45deg);
+        }
+        
+        /* Provides part of the "X" to eliminate an image from the close link */
+        
+        a.lightbox-close:after {
+        content: "";
+        display: block;
+        height: 30px;
+        width: 1px;
+        background: black;
+        position: absolute;
+        left: 26px;
+        top:10px;
+        -webkit-transform:rotate(-45deg);
+        -moz-transform:rotate(-45deg);
+        -o-transform:rotate(-45deg);
+        transform:rotate(-45deg);
+        }
+        
+        /* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
+        
+        .lightbox-target:target {
+        opacity: 1;
+        top: 0;
+        bottom: 0;
+          overflow:scroll;
+        }
+        
+        .lightbox-target:target img {
+        max-height: 100%;
+        max-width: 100%;
+        }
+        
+        .lightbox-target:target a.lightbox-close {
+        top: 0;
+        }
+        </style>
     <meta name="keywords" content="DJX, ZDX">
     <meta name="description" content="DJX LOVES ZDX!">
     
@@ -22,8 +147,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 text-center mx-auto">
-                    <h1 class="text-white pt-3 mt-n5">❄️ Hà Duy Bình ❤️ Nguyễn Thị Thanh My 🌟</h1>
-                    <p class="lead text-white mt-3">Started from Jun 3, 2022.</p>
+                    <h1 class="text-white pt-3 mt-n5">❄️ Hà Duy Bình ❤️ ? 🌟</h1>
+                    <p class="lead text-white mt-3">Started from ? ?, 2022.</p>
                 </div>
             </div>
         </div>
@@ -51,7 +176,7 @@
                 <div class="row">
                     <div class="col position-relative">
                         <div class="p-3 text-center">
-                            <h1 class="text-gradient text-primary"> <span id="state1"></span> DAYS</h1>
+                            <h1 class="text-gradient text-primary"> <span id="state"></span> DAYS</h1>
                             <h5 class="mt-3">How long have we been in relationship?</h5>
                         </div>
                     </div>
@@ -79,12 +204,12 @@
             <div class="container pb-lg-8 pb-5 pt-5 postion-relative z-index-2 position-relative">
                 <div class="row">
                     <div class="col-md-7 mx-auto">
-                        <h3 class="text-white" style="margin-bottom: 2rem;">Dear ZDX,</h3>
-                        <p class="text-white" style="font-weight: bold;">因为你，我爱上了诗意的生活和未知的快乐。</p>
-                        <p class="text-white" style="font-weight: bold;">盛夏的每个夜晚，星空总能勾勒出你的微笑。</p>
-                        <p class="text-white" style="font-weight: bold;">我知道，有位孤独的少女，沐浴着瀚海星辰，在未来等我。</p>
-                        <p class="text-white" style="font-weight: bold;">她的诗只写了一半，另一半，我们一起写完！</p>
-                        <h3 class="text-white" style="text-align: right;">Sincerely,</br>DJX</h3>
+                        <h3 class="text-white" style="margin-bottom: 2rem;">Dear ?,</h3>
+                        <p class="text-white" style="font-weight: bold;">This will be fill。</p>
+                        <p class="text-white" style="font-weight: bold;">This will be fill。</p>
+                        <p class="text-white" style="font-weight: bold;">This will be fill。</p>
+                        <p class="text-white" style="font-weight: bold;">This will be fill！</p>
+                        <h3 class="text-white" style="text-align: right;">Sincerely,<br>Bình</h3>
                     </div>
                 </div>
             </div>
@@ -117,7 +242,7 @@
                     </div>
                 </div>
                 <div class="card-body p-5" id="truth_words">
-                    <h3 class="mt-5 mb-3">TO DJX: </h3>
+                    <h3 class="mt-5 mb-3">TO B: </h3>
                     <p>你之前问我你什么地方最吸引我，我觉得我最喜欢你稳重，靠谱（？真的吗）有责任心，有担当。 </p>
                     <p>喜欢你勇于挑战，敢于尝试，乐于钻研。</p>
                     <p>喜欢你有恒心有毅力去做一件事。</p>
@@ -125,7 +250,7 @@
                     <p>我觉得你真的对我很好，我真的很开心很感动❤️</p>
                     <p>但是我觉得我哥说的很对，在爱情里面彼此的特质的吸引应该是最长久的，而且好的爱情，也应该是我们让彼此变得更好。</p>
                     <p>“因为你我想变得更好”。努力学习，提升完善自己，在性格上、专业上、为人处世上、外形上、眼界上，每一部分都是。</p>
-                    <h3 class="mt-5 mb-3">TO ZDX: </h3>
+                    <h3 class="mt-5 mb-3">TO ?: </h3>
                     <p>我准备正式好好和你相处的时候，我被你那爽朗乐观的笑容打动了！</p>
                     <p>感觉你特别开朗，又很爱聊天说话。和你相处久了之后，发现你对我很好，对待一段感情也很细心、认真。</p>
                     <p>面对事情虽然会紧张焦虑，但在思考以后都能完美化解！</p>
@@ -159,7 +284,7 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="">
+                        <a class="lightbox" href="#2">
                             <div class="card shadow-lg move-on-hover max-height-160">
                                 <img class="w-100 m-auto" src="./assets/img/qianshou2.jpg" alt="">
                             </div>
@@ -168,23 +293,24 @@
                                 <p class="text-secondary text-sm">IN XI JIE</p>
                             </div>
                         </a>
+                        
                     </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="lightbox-target" id="2">
+            <img src="./assets/img/qianshou2.jpg" style="width: 600px ;height: 500px;"/>
+            <a class="lightbox-close" href="#"></a>
+        </div>
 </section>
 
 <script src="./assets/js/core/bootstrap.min.js" type="text/javascript"></script>
-
 <script src="./assets/js/plugins/countup.min.js"></script>
-
 <script src="./assets/js/plugins/calendar/core.js"></script>
 <script src="./assets/js/plugins/calendar/daygrid.js"></script>
 <script src="./assets/js/plugins/calendar/interaction.js"></script>
-
 <script src="./assets/js/soft-design-system-pro.min.js?v=1.0.9" type="text/javascript"></script>
-
 <script src="./assets/js/sakura.js" type="text/javascript"></script>
 
 <script>
@@ -208,10 +334,10 @@
     if (Difference_In_Time>0)
         Difference_In_Days=Math.ceil(Difference_In_Time / (1000 * 3600 * 24));
 
-    if (document.getElementById('state1')) {
-        document.getElementById("state1").setAttribute("countTo",Difference_In_Days.toString());
-        document.getElementById("state1").innerHTML=Difference_In_Days.toString();
-        const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
+    if (document.getElementById('state')) {
+        document.getElementById("state").setAttribute("countTo",Difference_In_Days.toString());
+        document.getElementById("state").innerHTML=Difference_In_Days.toString();
+        const countUp = new CountUp('state', document.getElementById("state").getAttribute("countTo"));
         if (!countUp.error) {
             countUp.start();
         } else {
@@ -227,11 +353,12 @@
             defaultDate: '2022-06',
             events: [
                 {
-                    title: '第1次表白👩‍❤️‍👨',
-                    start: '2022-06-03'
+                    title: '👩‍❤️‍👨',
+                    start: '2022-06-03',
+                    
                 },
                 {
-                    title: '第1次牵手🤝',
+                    title: '🤝',
                     start: '2022-06-06'
                 }
             ]
